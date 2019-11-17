@@ -13,3 +13,10 @@ after_success:
   - docker build -t seandor93/multi-nginx ./nginx
   - docker build -t seandor93/multi-server ./server
   - docker build -t seandor93/multi-worker ./worker
+  # log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # push images to docker hub
+  - docker push seandor93/multi-client
+  - docker push seandor93/multi-nginx
+  - docker push seandor93/multi-server
+  - docker push seandor93/multi-worker

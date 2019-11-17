@@ -3,7 +3,7 @@ WORKDIR "/app"
 COPY ./package.json ./
 
 # For chinese developers :D
-RUN npm config set registry https://registry.npm.taobao.org
+# RUN npm config set registry https://registry.npm.taobao.org
 RUN npm install
 
 COPY . .
